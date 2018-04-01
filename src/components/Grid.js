@@ -15,7 +15,7 @@ export default class Grid extends Component {
 }
 
 Grid.propTypes = {
-  fluid: PropTypes.bool,
+  fluid: PropTypes.any,
   className: PropTypes.string,
   tagName: PropTypes.string,
   children: PropTypes.node
