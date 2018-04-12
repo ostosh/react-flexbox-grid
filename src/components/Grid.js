@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import omit from 'lodash/omit';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import style from 'flexboxgrid';
@@ -8,7 +9,7 @@ export default class Grid extends Component {
     const containerClass = style[this.props.fluid ? 'container-fluid' : 'container'];
     const className = classNames(this.props.className, containerClass);
 
-    return React.createElement(this.props.tagName || 'div', Object.assign({}, this.props, {
+    return React.createElement(this.props.tagName || 'div', Object.assign({}, omit(this.props, ['fluid', 'className', 'tagName']), {
       className
     }), this.props.children);
   }
